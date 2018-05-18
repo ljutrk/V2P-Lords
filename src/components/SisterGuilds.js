@@ -11,6 +11,7 @@ class SisterGuilds extends Component {
         return (
             <div className="container">
                 <div className="homeDiv">
+                <h1>Sister Guilds!</h1>
                 </div>
             </div>
         );

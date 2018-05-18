@@ -18,7 +18,7 @@ class Search extends Component {
         return (
             <div className="searchDiv">
                 <img className="searchIcon" src="http://icons.iconarchive.com/icons/icons8/ios7/256/Very-Basic-Search-icon.png" alt="searchIcon" />
-                <input className="searchInput" type="text" value={this.state.searchInput} onChange={this.changeHandler} />
+                <input className="searchInput" type="text" value={this.state.searchInput} onChange={this.changeHandler} placeholder="Search players by name..." />
             </div>
         );
     }
