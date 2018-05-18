@@ -1,0 +1,77 @@
+.container {
+  padding: 0 10%;
+}
+
+.header {
+  background-color: #2e5c71;
+  padding: 5px;
+}
+
+.homeDiv {
+  padding: 0 5px 5px 5px;
+}
+
+.navUL {
+  list-style-type: none;
+  display: inline-block;
+  
+}
+
+.right {
+  float: right;
+}
+
+.navUL li {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.navUL li:hover {
+  color: #b09a68;
+}
+
+.main {
+  background-color: rgb(149, 255, 149);
+}
+
+.blue {
+  background-color: #2e5c71;
+}
+
+.playerRowGrid {
+  display: grid;
+  grid-template-columns: 3% 15% 15% 10% 15% 17% 10% auto;
+  grid-gap: 3px;
+  
+  align-content: center;
+  /* justify-content: left; */
+}
+
+.playerRowGrid p {
+  /* height: 50px;   */
+  background-color: rgb(231, 231, 231);
+  padding: 20px 10px;
+  margin: 3px 0;
+}
+
+.searchInput {
+  height: 25px;
+  padding: 3px 3px 3px 25px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid #2e5c71;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  height: 15px;
+}
+
+.searchDiv {
+  position: relative;
+  padding: 20px;
+}
