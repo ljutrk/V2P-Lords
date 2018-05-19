@@ -1,0 +1,32 @@
+@import 'variables';
+.playerRowGrid {
+  div {
+    p {
+      &:first-child {
+        color: #2e5c71;
+        font-size: 12px;
+      }
+      &:nth-child(even) {
+        padding-top: 5px;
+        font-size: 18px;
+      }
+    }
+    background-color: rgb(231, 231, 231);
+    padding: 10px 10px;
+    margin: 3px 0;
+  }
+  display: grid;
+  grid-template-columns: 3% 15% 15% 10% 15% 17% 10% auto;
+  grid-gap: 3px;
+  align-content: center;
+}
+
+.totalTroopsP {
+  cursor: pointer;
+}
+
+#tablePosition {
+  color: black;
+  font-size: 20px;
+  padding: 8px 0;
+}

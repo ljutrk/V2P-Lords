@@ -1,0 +1,40 @@
+@import 'variables';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* input placeholder color */
+
+::-webkit-input-placeholder {
+  font-style: italic;
+  color: $placeholderBlue;
+}
+
+::-moz-placeholder {
+  font-style: italic;
+  color: $placeholderBlue;
+}
+
+:-ms-input-placeholder {
+  font-style: italic;
+  color: $placeholderBlue;
+}
+
+:-moz-placeholder {
+  font-style: italic;
+  color: $placeholderBlue;
+}
+
+/* hides up and down arrows in type="number" inputs */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

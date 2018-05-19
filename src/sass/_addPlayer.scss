@@ -1,0 +1,62 @@
+@import 'variables';
+.addPlayerGrid {
+  select {
+    appearance: none;
+    outline: none;
+    padding: 3px;
+    margin: 3px 0 3px 10px;
+  }
+  input {
+    outline: none;
+    padding: 3px;
+    border-style: solid;
+    border-color: $blue;
+    border-width: 0 0 1px 0;
+    margin: 3px 0 3px 10px;
+  }
+  div {
+    justify-self: left;
+    align-self: center;
+  }
+  margin: 0 auto;
+  width: 500px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 20px;
+  grid-template-areas: 'name might' 'zone castle' 'guild rank' 'troops troops';
+}
+
+.addPlayerNameDiv {
+  grid-area: name;
+}
+
+.addPlayerMightDiv {
+  grid-area: might;
+}
+
+.addPlayerTimeZoneDiv {
+  grid-area: zone;
+}
+
+.addPlayerCastleDiv {
+  grid-area: castle;
+}
+
+.addPlayerGuildDiv {
+  grid-area: guild;
+}
+
+.addPlayerRankDiv {
+  grid-area: rank;
+}
+
+.addPlayerTroopsDiv {
+  grid-area: troops;
+  align-content: center;
+  justify-content: center;
+}
+
+.addPlayerTroopsDiv {
+  width: 500px;
+}
