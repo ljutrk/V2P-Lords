@@ -1,12 +1,8 @@
 import React, { Fragment } from 'react';
-import { getTroopCount, getLocalTime, formatBigNumbers } from './utils';
+import { getTroopCount, getLocalTime, formatBigNumbers } from '../../shared/utils';
 
 const PlayerRow = ({ player, index, modalOpener }) => {
-
-
-    // const currentDate = new Date();
-    // const templejt = currentDate.getDate() + "/" + (currentDate.getMonth()+1) + "/" + currentDate.getFullYear()
-    // console.log(templejt);
+    
     const troopsClickHandler = () => {
         modalOpener(player.troops, player.name)
 
@@ -37,7 +33,6 @@ const PlayerRow = ({ player, index, modalOpener }) => {
                     <div>
                         <p>Total troops:</p>
                         <p className="totalTroopsP" onClick={troopsClickHandler}>{formatBigNumbers(getTroopCount(player.troops))}</p>
-                        {/* <img id="troopsDetails" src="http://downloadicons.net/sites/default/files/eye-icon-75805.png" /> */}
                     </div>
                     <div className="">
                         <p>Local time:</p>

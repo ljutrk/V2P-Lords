@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import players from './PlayersTmpDb';
+import players from '../../shared/PlayersTmpDb';
 import PlayerRow from './PlayerRow';
-import Search from './Search';
-import { playerNameFilter, filterFunctions, formatBigNumbers } from './utils';
+import Search from '../partials/Search';
+import { playerNameFilter, filterFunctions, formatBigNumbers } from '../../shared/utils';
 
 class Home extends Component {
     constructor(props) {
@@ -31,11 +31,6 @@ class Home extends Component {
             searchInput,
             filteredPlayers: filteredPlayersByName
         });
-    }
-
-    clickHandler = (e) => {
-        // this.setState({filteredPlayers: players.sort(filterFunctions[e.target.id]) })
-        // console.log(e.target.value);
     }
 
     filterClickHandler = (e) => {
@@ -68,7 +63,6 @@ class Home extends Component {
 
         return (
             <div className="container">
-                {/* <div id="troopsModal" className="modal"> */}
                 <div id="troopsModal" className={this.state.troopsModal ? "modal displayBlock" : "modal displayNone"}>
                     <div className="modal-content">
                         <span onClick={this.closeModal} className="close">&times;</span>

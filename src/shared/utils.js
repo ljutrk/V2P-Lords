@@ -106,5 +106,33 @@ const filterFunctions = {
     }
 }
 
+const authenticate = () => {
+    return sessionStorage.getItem("token");
+}
 
-export { getTroopCount, playerNameFilter, getLocalTime, formatBigNumbers, filterFunctions }
+const loginSuccess = (sessionId) => {
+    sessionStorage.setItem("token", sessionId);
+    window.location.pathname = "/addPlayer";
+}
+
+const loginFail = () => {
+    alert("Login failed!")
+    window.location.reload();
+}
+
+const loggedIn = () => {
+    return sessionStorage.getItem("token");
+}
+
+const logout = () => {
+    return sessionStorage.removeItem("token");
+    window.location.pathname = "/home";
+}
+
+const getFormattedCurrentDate = () => {
+    const currentDate = new Date();
+    return currentDate.getDate() + "/" + (currentDate.getMonth()+1) + "/" + currentDate.getFullYear();
+    
+}
+
+export { getTroopCount, playerNameFilter, getLocalTime, formatBigNumbers, filterFunctions, authenticate, loginFail, loginSuccess, loggedIn, logout, getFormattedCurrentDate }

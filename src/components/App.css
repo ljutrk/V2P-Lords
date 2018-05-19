@@ -46,7 +46,6 @@
   align-content: center;
 }
 
-
 .playerRowGrid div {
   background-color: rgb(231, 231, 231);
   padding: 10px 10px;
@@ -137,7 +136,6 @@
   padding: 10px;
   color: white;
   cursor: pointer;
-  
 }
 
 .filterDropdownDiv p:hover {
@@ -154,11 +152,10 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Content */
 .modal-content {
   background-color: #fefefe;
   margin: auto;
@@ -174,7 +171,6 @@
   font-weight: bold;
 }
 
-/* The Close Button */
 .close {
   color: #aaaaaa;
   float: right;
@@ -206,6 +202,7 @@
   font-size: 14px;
   font-style: italic;
 }
+
 .modalT4 li:first-child {
   font-size: 20px;
 }
@@ -219,6 +216,7 @@
   font-size: 14px;
   font-style: italic;
 }
+
 .modalT3 li:first-child {
   font-size: 20px;
 }
@@ -227,3 +225,136 @@
   padding: 3px 0 3px 10px;
   font-size: 20px;
 }
+
+.loginForm {
+  align-self: center;
+  justify-self: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-color: #2e5c71;
+  color: white;
+}
+
+.loginGrid {
+  height: 500px;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+
+#username {
+  display: block;
+}
+
+#password {
+  display: block;
+}
+
+.headerLogout {
+  cursor: pointer;
+}
+
+.addPlayerGrid {
+  margin: 0 auto;
+  width: 500px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 20px;
+  grid-template-areas:
+    'name might'
+    'zone castle'
+    'guild rank'
+    'troops troops';
+}
+
+.addPlayerGrid div {
+  justify-self: left;
+  align-self: center;
+  /* background-color: red; */
+}
+
+.addPlayerNameDiv {
+  grid-area: name;
+}
+
+.addPlayerMightDiv {
+  grid-area: might;
+}
+
+.addPlayerTimeZoneDiv {
+  grid-area: zone;
+}
+
+.addPlayerCastleDiv {
+  grid-area: castle;
+}
+
+.addPlayerGuildDiv {
+  grid-area: guild;
+}
+
+.addPlayerRankDiv {
+  grid-area: rank;
+}
+
+.addPlayerTroopsDiv {
+  grid-area: troops;
+  align-content: center;
+  justify-content: center;
+}
+
+.addPlayerGrid input {
+  outline: none;
+  padding: 3px;
+  border-style: solid;
+  border-color: #2e5c71;
+  border-width: 0 0 1px 0;
+  margin: 3px 0 3px 10px;
+}
+
+/* hides up and down arrows in type="number" inputs */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.addPlayerTroopsDiv {
+  width: 500px;
+}
+
+select {
+  appearance: none;
+  outline: none;
+  padding: 3px;
+  margin: 3px 0 3px 10px;
+}
+
+/* input placeholder color */
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-style: italic;
+  color: rgba(46, 92, 113, 0.5);
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: pink;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: pink;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: pink;
+}
+  
