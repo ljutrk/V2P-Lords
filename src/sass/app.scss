@@ -8,24 +8,25 @@
 @import 'helpers';
 @import 'login';
 @import 'addPlayer';
-
-.container {
+@import 'speedupCounter';
+.container,
+.headerContainer {
   padding: 0 10%;
 }
 
-.homeDiv {
+html,
+body,
+#root,
+.app,
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.home {
   padding: 0 5px 5px 5px;
 }
 
 .main {
   background-color: rgb(149, 255, 149);
 }
-
-
-
-
-
-
-
-
-

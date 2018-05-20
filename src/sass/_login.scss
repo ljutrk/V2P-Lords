@@ -1,22 +1,43 @@
-.loginGrid {
-    height: 500px;
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-}
+@import 'variables';
 
-#username {
-    display: block;
-}
-
-#password {
-    display: block;
+.login {
+    display: flex;
+    height: 100%;
+    width: 100%;
 }
 
 .loginForm {
-    align-self: center;
-    justify-self: center;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    background-color: $blue;
-    color: white;
+    input {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: #555;
+    }
+    .loginBtn {
+        display: block;
+        width: 100%;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        color: white;
+        font-size: 18px;
+        background: $blue;
+        cursor: pointer;
+    }
+    margin: auto;
+    position: relative;
+    width: 300px;
+}
+
+.lordsLogo {
+    width: 300px;
+    top: -220px;
+    position: absolute;
 }

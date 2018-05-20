@@ -1,62 +1,130 @@
 @import 'variables';
-.addPlayerGrid {
-  select {
+// @import 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css';
+.playerData {
+  form {
+    margin: auto;
+    width: 400px;
+  }
+  #name,
+  #might,
+  #timeZone {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+  }
+  p {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .addPlayerCastleDiv {
+    margin-bottom: 15px;
+  }
+  label {
+    input[type="checkbox"] {
+      display: none;
+      +.label-text:before {
+        
+        font-family: "Font Awesome";
+        speak: none;
+        content:"\f096";
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        width: 1em;
+        display: inline-block;
+        margin-right: 5px;
+      }
+      &:checked {
+        +.label-text:before {
+          content:"\f046";
+          color: $blue;
+        }
+      }
+    }
+    font-size: 24px;
+  }
+  .addPlayerTimeZoneDiv {
+    position: relative;
+  }
+  #timeZone {
+    margin-left: 27px;
+    width: 93%;
+  }
+  #sign {
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     appearance: none;
     outline: none;
-    padding: 3px;
-    margin: 3px 0 3px 10px;
+    padding: 8px;
+    height: 34px;
+    font-weight: bold;
   }
-  input {
-    outline: none;
-    padding: 3px;
-    border-style: solid;
-    border-color: $blue;
-    border-width: 0 0 1px 0;
-    margin: 3px 0 3px 10px;
-  }
-  div {
-    justify-self: left;
-    align-self: center;
-  }
-  margin: 0 auto;
-  width: 500px;
-  padding: 5px;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-gap: 20px;
-  grid-template-areas: 'name might' 'zone castle' 'guild rank' 'troops troops';
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
-.addPlayerNameDiv {
-  grid-area: name;
-}
-
-.addPlayerMightDiv {
-  grid-area: might;
-}
-
-.addPlayerTimeZoneDiv {
-  grid-area: zone;
-}
-
-.addPlayerCastleDiv {
-  grid-area: castle;
-}
-
-.addPlayerGuildDiv {
-  grid-area: guild;
-}
-
-.addPlayerRankDiv {
-  grid-area: rank;
-}
-
-.addPlayerTroopsDiv {
-  grid-area: troops;
-  align-content: center;
-  justify-content: center;
-}
-
-.addPlayerTroopsDiv {
-  width: 500px;
-}
+// .addPlayerGrid {
+//   select {
+//     appearance: none;
+//     outline: none;
+//     padding: 3px;
+//     margin: 3px 0 3px 10px;
+//   }
+//   input {
+//     outline: none;
+//     padding: 3px;
+//     border-style: solid;
+//     border-color: $blue;
+//     border-width: 0 0 1px 0;
+//     margin: 3px 0 3px 10px;
+//   }
+//   div {
+//     justify-self: left;
+//     align-self: center;
+//   }
+//   margin: 0 auto;
+//   width: 500px;
+//   padding: 5px;
+//   display: grid;
+//   grid-template-columns: 50% 50%;
+//   grid-gap: 20px;
+//   grid-template-areas: 'name might' 'zone castle' 'guild rank' 'troops troops';
+// }
+// .addPlayerNameDiv {
+//   grid-area: name;
+// }
+// .addPlayerMightDiv {
+//   grid-area: might;
+// }
+// .addPlayerTimeZoneDiv {
+//   grid-area: zone;
+// }
+// .addPlayerCastleDiv {
+//   grid-area: castle;
+// }
+// .addPlayerGuildDiv {
+//   grid-area: guild;
+// }
+// .addPlayerRankDiv {
+//   grid-area: rank;
+// }
+// .addPlayerTroopsDiv {
+//   grid-area: troops;
+//   align-content: center;
+//   justify-content: center;
+// }
+// .addPlayerTroopsDiv {
+//   width: 500px;
+// }

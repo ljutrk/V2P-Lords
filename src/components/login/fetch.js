@@ -1,6 +1,5 @@
 import { URL, headers } from "../../shared/constants";
 import { loginSuccess, loginFail } from "../../shared/utils";
-import React from 'react';
 
 const login = (loginData) => {
 

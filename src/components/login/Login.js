@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { login } from './fetch';
-import { headers } from '../../shared/utils';
 
 class Login extends Component {
     constructor(props) {
@@ -27,29 +26,27 @@ class Login extends Component {
         this.setState({
             username: "",
             password: ""
-        })
+        });
     }
+
     render() {
         return (
-            <div className="container">
-                <div className="loginGrid">
-                    <div className="loginForm">
-                        <form onSubmit={this.submitHandler}>
-                            <label>
-                                Username
-                        <input id="username" type="text" onChange={this.inputChangeHandler} />
-                            </label>
-                            <label>
-                                Password
-                        <input id="password" type="password" onChange={this.inputChangeHandler} />
-                            </label>
-                            <button type="submit">
-                                LOG IN
-                    </button>
-                        </form>
-                    </div>
-                </div>
+            <div className="login">
+                <form className="loginForm" onSubmit={this.submitHandler}>
+                    <img className="lordsLogo" src="https://cdn-www.bluestacks.com/bs-images/lords-mobile_logo.png" alt="lordsLogo" />
 
+                    <div className="userDiv">
+                        <input id="username" type="text" onChange={this.inputChangeHandler} placeholder="Username" />
+                    </div>
+
+                    <div className="passDiv">
+                        <input id="password" type="password" onChange={this.inputChangeHandler} placeholder="Password" />
+                    </div>
+
+                    <button className="loginBtn" type="submit">
+                        Login
+        </button>
+                </form>
             </div>
         );
     }

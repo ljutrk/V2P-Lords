@@ -14,7 +14,7 @@ class Search extends Component {
     }
 
     render() {
-        
+
         return (
             <div className="searchDiv">
                 <img className="searchIcon" src="http://icons.iconarchive.com/icons/icons8/ios7/256/Very-Basic-Search-icon.png" alt="searchIcon" />

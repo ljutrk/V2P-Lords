@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import players from '../../shared/PlayersTmpDb';
-import PlayerRow from './PlayerRow';
+import { playerNameFilter, filterFunctions } from '../../shared/utils';
+import Modal from '../partials/Modal';
 import Search from '../partials/Search';
-import { playerNameFilter, filterFunctions, formatBigNumbers } from '../../shared/utils';
+import PlayerRow from './PlayerRow';
+import FilterSelect from '../partials/FilterSelect';
 
 class Home extends Component {
     constructor(props) {
@@ -20,9 +22,8 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        this.setState({
-            filteredPlayers: players.sort(filterFunctions.rank)
-        })
+        const filteredPlayers = players.sort(filterFunctions.rank);
+        this.setState({ filteredPlayers });
     }
 
     searchHandler = (searchInput) => {
@@ -38,12 +39,7 @@ class Home extends Component {
             filterDropdown: !this.state.filterDropdown,
             filteredPlayers: players.sort(filterFunctions[e.target.id]),
             filter: e.target.textContent
-        })
-
-    }
-
-    filterBtn = (a) => {
-        return a ? a : "Filter Players"
+        });
     }
 
     modalOpener = (playerTroops, playerName) => {
@@ -51,64 +47,21 @@ class Home extends Component {
             troopsModal: true,
             playerTroopsForModal: playerTroops,
             playerNameForModal: playerName
-        })
+        });
     }
 
     closeModal = () => {
-        this.setState({ troopsModal: false })
+        this.setState({ troopsModal: false });
     }
 
     render() {
-        const troops = this.state.playerTroopsForModal
 
         return (
-            <div className="container">
-                <div id="troopsModal" className={this.state.troopsModal ? "modal displayBlock" : "modal displayNone"}>
-                    <div className="modal-content">
-                        <span onClick={this.closeModal} className="close">&times;</span>
-                        <p>{this.state.playerNameForModal}</p>
-                        <hr />
-                        <ul className="modalT4">
-                            <li>Tier 4:</li>
-                            <br />
-                            <li>Heroic Fighter: </li>
-                            <li>{formatBigNumbers(troops.heroicFighter)} </li>
-                            <li>Heroic Cannoneer:</li>
-                            <li>{formatBigNumbers(troops.heroicCannoneer)}</li>
-                            <li>Ancient Drake Rider:</li>
-                            <li>{formatBigNumbers(troops.ancientDrakeRider)}</li>
-                            <li>Destroyer:</li>
-                            <li>{formatBigNumbers(troops.destroyer)}</li>
-                        </ul>
-                        <ul className="modalT3">
-                            <li>Tier 3:</li>
-                            <br />
-                            <li>Royal Guard:</li>
-                            <li>{formatBigNumbers(troops.royalGuard)}</li>
-                            <li>Stealth Sniper:</li>
-                            <li>{formatBigNumbers(troops.stealthSniper)}</li>
-                            <li>Royal Cavalry:</li>
-                            <li>{formatBigNumbers(troops.royalCavalry)}</li>
-                            <li>Fire Trebuchet:</li>
-                            <li>{formatBigNumbers(troops.fireTrebuchet)}</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="homeDiv">
-                    <Search searchHandler={this.searchHandler} />
-                    <div className="selectDiv">
-                        <button onClick={this.filterClickHandler}>
-                            {this.filterBtn(this.state.filter)}
-                        </button>
-                        <div className={this.state.filterDropdown ? "filterDropdownDiv" : "filterDropdownDiv displayNone"}>
-                            <p id="rank" onClick={this.filterClickHandler}>Rank</p>
-                            <p id="name" onClick={this.filterClickHandler}>Name</p>
-                            <p id="might" onClick={this.filterClickHandler}>Might</p>
-                            <p id="totalTroops" onClick={this.filterClickHandler}>Total Troops</p>
-                        </div>
-                    </div>
-                    {this.state.filteredPlayers.map((player, key) => <PlayerRow key={key} player={player} index={key} modalOpener={this.modalOpener} />)}
-                </div>
+            <div className="home">
+                <Modal troops={this.state.playerTroopsForModal} troopsModal={this.state.troopsModal} playerName={this.state.playerNameForModal} closeModal={this.closeModal} />
+                <Search searchHandler={this.searchHandler} />
+                <FilterSelect filterClickHandler={this.filterClickHandler} filter={this.state.filter} filterDropdown={this.state.filterDropdown} />
+                {this.state.filteredPlayers.map((player, key) => <PlayerRow key={key} player={player} index={key} modalOpener={this.modalOpener} />)}
             </div>
         );
     }

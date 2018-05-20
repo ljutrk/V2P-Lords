@@ -7,12 +7,11 @@ class Enemies extends Component {
 
         }
     }
+    
     render() {
         return (
-            <div className="container">
-                <div className="homeDiv">
-                    <h1>Enemies!</h1>
-                </div>
+            <div className="homeDiv">
+                <h1>Enemies!</h1>
             </div>
         );
     }

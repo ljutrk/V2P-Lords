@@ -131,8 +131,51 @@ const logout = () => {
 
 const getFormattedCurrentDate = () => {
     const currentDate = new Date();
-    return currentDate.getDate() + "/" + (currentDate.getMonth()+1) + "/" + currentDate.getFullYear();
-    
+    return currentDate.getDate() + "/" + (currentDate.getMonth() + 1) + "/" + currentDate.getFullYear();
+
 }
 
-export { getTroopCount, playerNameFilter, getLocalTime, formatBigNumbers, filterFunctions, authenticate, loginFail, loginSuccess, loggedIn, logout, getFormattedCurrentDate }
+const speedupText = (value) => {
+    if (value % 1440 === 0 && value !== 1440) {
+        return value / 1440 + " Days:";
+    } else if (value % 60 === 0 && value !== 60) {
+        return value / 60 + " Hours:";
+    } else {
+        return value + " Minute" + (value === 1 ? ":" : "s:");
+    }
+}
+
+const getTotalSpeedupTime = (speedupTime) => {
+    const speedupCount = Object.entries(speedupTime)
+    let sum = 0;
+    for (let i = 0; i < speedupCount.length - 1; i++) {
+
+        sum += parseInt(speedupCount[i][0].slice(1)) * speedupCount[i][1]
+    }
+    return sum
+}
+
+const formattedSpeedupTime = (value) => {
+    let days = Math.floor(value / 1440);
+    value = value % 1440
+    let hours = Math.floor(value / 60);
+    value = value % 60
+    return `Days: ${days} Hours: ${hours} Minutes: ${value}`
+}
+
+export {
+    getTroopCount,
+    playerNameFilter,
+    getLocalTime,
+    formatBigNumbers,
+    filterFunctions,
+    authenticate,
+    loginFail,
+    loginSuccess,
+    loggedIn,
+    logout,
+    getFormattedCurrentDate,
+    speedupText,
+    getTotalSpeedupTime,
+    formattedSpeedupTime
+}
