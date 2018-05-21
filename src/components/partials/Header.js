@@ -19,7 +19,7 @@ const Header = () => {
                 </ul>
 
                 <ul className="navUL right">
-                    <Link to="/addPlayer"><li>Add Player</li></Link>
+                    <Link to="/addPlayer/playerInfo"><li>Add Player</li></Link>
                     <Route path="/addplayer" render={()=>{
                         return <li onClick={logouthandler} className="headerLogout">Logout</li>
                     }}/>

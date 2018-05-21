@@ -4,7 +4,7 @@ import Home from './home/Home';
 import SisterGuilds from './sisterGuild/SisterGuilds';
 import Enemies from './enemies/Enemies';
 import AddPlayer from './addPlayer/AddPlayer';
-import PrivateRoute from './partials/PrivatRoute';
+import PrivateRoute from './partials/PrivateRoute';
 import Login from './login/Login';
 import SpeedupCounter from './SpeedupCounter/SpeedupCounter';
 
@@ -16,7 +16,10 @@ const Main = () => {
             <Route exact path="/enemies" component={Enemies} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/speedupCounter" component={SpeedupCounter} />
-            <PrivateRoute exact path="/addPlayer" component={AddPlayer} />
+            <PrivateRoute path="/addPlayer" component={AddPlayer} />
+            {/* <PrivateRoute exact path="/addPlayer/playerInfo" component={AddPlayer} />
+            <PrivateRoute exact path="/addPlayer/guildInfo" component={AddPlayer} />
+            <PrivateRoute exact path="/addPlayer/troopsInfo" component={AddPlayer} /> */}
         </div>
     );
 }
