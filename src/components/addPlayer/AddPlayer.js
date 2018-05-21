@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { getFormattedCurrentDate } from '../../shared/utils';
 import GuildInfo from './GuildInfo';
 import TroopsInfo from './TroopsInfo';
@@ -25,7 +25,9 @@ class AddPlayers extends Component {
             fireTrebuchet: "",
             timeZone: "",
             lastUpdate: "",
-            sign: "+"
+            sign: "+",
+            GFPts: "",
+            phase: 1
         }
     }
 
@@ -41,15 +43,46 @@ class AddPlayers extends Component {
         this.setState({ [e.target.id]: !this.state.castle25 })
     }
 
+    btnClickHandler = (e) => {
+        e.preventDefault();
+
+        if (e.target.id === "btnNext") {
+            this.setState({ phase: this.state.phase + 1 })
+        }
+
+        if (e.target.id === "btnPrev") {
+            // this.setState({ phase: this.state.phase - 1 })
+            this.setState((prevState, props) => ({
+                phase: prevState.phase - 1
+            }));
+        }
+
+        if (e.target.id === "btnSubmit") {
+            console.log("submit done!");
+
+        }
+    }
+
+
     render() {
         console.log(this.state);
-        
+
         return (
-            <Fragment>
-                <Route exact path="/addPlayer/playerInfo" render={()=> <PlayerInfo checkboxHandler={this.checkboxHandler} inputHandler={this.inputHandler} />} />
-                <Route exact path="/addPlayer/guildInfo" render={()=> <GuildInfo />} />
-                <Route exact path="/addPlayer/troopsInfo" render={()=> <TroopsInfo />} />
-            </Fragment>
+            <div className="playerInfo">
+                <form className="playerInfoForm">
+                    <div className="playerInfoInnerDiv">
+                        {this.state.phase === 1 ? <PlayerInfo checkboxHandler={this.checkboxHandler} inputHandler={this.inputHandler} /> : ""}
+                        {this.state.phase === 2 ? <GuildInfo inputHandler={this.inputHandler} /> : ""}
+                        {this.state.phase === 3 ? <TroopsInfo /> : ""}
+                    </div>
+                    <div className="playerInfoNavDiv">
+                        <br />
+                        {this.state.phase !== 1 ? <button id="btnPrev" onClick={this.btnClickHandler}>back</button> : ""}
+                        {this.state.phase !== 3 ? <button id="btnNext" className="right" onClick={this.btnClickHandler}>next</button> : ""}
+                        {this.state.phase === 3 ? <button id="btnSubmit" className="right" onClick={this.btnClickHandler}>submit</button> : ""}
+                    </div>
+                </form>
+            </div>
         );
     }
 }

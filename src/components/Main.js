@@ -7,6 +7,7 @@ import AddPlayer from './addPlayer/AddPlayer';
 import PrivateRoute from './partials/PrivateRoute';
 import Login from './login/Login';
 import SpeedupCounter from './SpeedupCounter/SpeedupCounter';
+import UpdatePlayer from './updatePlayer/UpdatePlayer';
 
 const Main = () => {
     return (
@@ -16,10 +17,8 @@ const Main = () => {
             <Route exact path="/enemies" component={Enemies} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/speedupCounter" component={SpeedupCounter} />
+            {/* <PrivateRoute path="/updatePlayer" component={UpdatePlayer} /> */}
             <PrivateRoute path="/addPlayer" component={AddPlayer} />
-            {/* <PrivateRoute exact path="/addPlayer/playerInfo" component={AddPlayer} />
-            <PrivateRoute exact path="/addPlayer/guildInfo" component={AddPlayer} />
-            <PrivateRoute exact path="/addPlayer/troopsInfo" component={AddPlayer} /> */}
         </div>
     );
 }

@@ -185,6 +185,9 @@ input[type="number"] {
 .right {
   float: right; }
 
+.left {
+  float: left; }
+
 .blue {
   background-color: #2e5c71; }
 
@@ -233,7 +236,7 @@ input[type="number"] {
 
 .playerInfo {
   display: flex;
-  height: 100%;
+  height: 90%;
   width: 100%; }
   .playerInfo form {
     margin: auto;
@@ -279,6 +282,72 @@ input[type="number"] {
     padding: 8px;
     height: 34px;
     font-weight: bold; }
+
+.playerInfoNavDiv button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  background: #2e5c71;
+  cursor: pointer; }
+
+.addPlayerGuildDiv #rank {
+  position: absolute;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  outline: none;
+  padding: 8px;
+  height: 34px;
+  font-weight: bold; }
+.addPlayerGuildDiv input {
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #555;
+  margin-left: 27px;
+  width: 93%; }
+
+.addPlayerGFPtsDiv input {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #555; }
+
+.addPlayerTroopsDiv ul {
+  list-style: none; }
+.addPlayerTroopsDiv li {
+  font-size: 20px; }
+  .addPlayerTroopsDiv li input {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555; }
+  .addPlayerTroopsDiv li:first-child {
+    font-size: 24px;
+    text-align: center; }
+
+.playerInfoInnerDiv {
+  height: 320px; }
 
 .speedupCounter {
   display: flex;
