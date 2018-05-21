@@ -10,6 +10,7 @@ import SpeedupCounter from './SpeedupCounter/SpeedupCounter';
 import UpdatePlayer from './updatePlayer/UpdatePlayer';
 
 const Main = () => {
+    
     return (
         <div className="container">
             <Route exact path="/" component={Home} />

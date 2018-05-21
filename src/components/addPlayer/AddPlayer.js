@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Redirect } from 'react-router-dom';
 import { getFormattedCurrentDate } from '../../shared/utils';
 import GuildInfo from './GuildInfo';
 import TroopsInfo from './TroopsInfo';
@@ -58,8 +58,8 @@ class AddPlayers extends Component {
         }
 
         if (e.target.id === "btnSubmit") {
-            console.log("submit done!");
-            window.location.pathname = "/";
+            this.props.history.push("/");
+
         }
     }
 

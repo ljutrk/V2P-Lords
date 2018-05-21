@@ -112,12 +112,10 @@ const authenticate = () => {
 
 const loginSuccess = (sessionId) => {
     sessionStorage.setItem("token", sessionId);
-    window.location.pathname = "/addPlayer";
 }
 
 const loginFail = () => {
     alert("Login failed!")
-    window.location.reload();
 }
 
 const loggedIn = () => {
@@ -126,7 +124,6 @@ const loggedIn = () => {
 
 const logout = () => {
     return sessionStorage.removeItem("token");
-    window.location.pathname = "/home";
 }
 
 const getFormattedCurrentDate = () => {

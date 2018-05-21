@@ -1,13 +1,14 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, withRouter } from 'react-router-dom';
 import { logout } from '../../shared/utils';
 
-const logouthandler = () => {
-    logout();
-    window.location.pathname = "/";
-}
+const Header = (props) => {
 
-const Header = () => {
+    const logouthandler = () => {
+        logout();
+        props.history.push("/");        
+    }
+    
     return (
         <div className="headerContainer blue">
             <div className="header">
@@ -28,4 +29,4 @@ const Header = () => {
     );
 }
 
-export default Header;
+export default withRouter(Header);

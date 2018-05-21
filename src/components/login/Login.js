@@ -27,6 +27,8 @@ class Login extends Component {
             username: "",
             password: ""
         });
+        this.props.history.push("/addPlayer");
+
     }
 
     render() {
