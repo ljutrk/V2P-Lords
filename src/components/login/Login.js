@@ -33,7 +33,7 @@ class Login extends Component {
         return (
             <div className="login">
                 <form className="loginForm" onSubmit={this.submitHandler}>
-                    <img className="lordsLogo" src="https://cdn-www.bluestacks.com/bs-images/lords-mobile_logo.png" alt="lordsLogo" />
+                    {/* <img className="lordsLogo" src="https://cdn-www.bluestacks.com/bs-images/lords-mobile_logo.png" alt="lordsLogo" /> */}
 
                     <div className="userDiv">
                         <input id="username" type="text" onChange={this.inputChangeHandler} placeholder="Username" />

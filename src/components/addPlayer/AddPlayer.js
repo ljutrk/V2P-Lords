@@ -59,7 +59,7 @@ class AddPlayers extends Component {
 
         if (e.target.id === "btnSubmit") {
             console.log("submit done!");
-
+            window.location.pathname = "/";
         }
     }
 

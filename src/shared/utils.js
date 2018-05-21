@@ -112,7 +112,7 @@ const authenticate = () => {
 
 const loginSuccess = (sessionId) => {
     sessionStorage.setItem("token", sessionId);
-    window.location.pathname = "/addPlayer/playerInfo";
+    window.location.pathname = "/addPlayer";
 }
 
 const loginFail = () => {

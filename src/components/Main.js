@@ -17,7 +17,7 @@ const Main = () => {
             <Route exact path="/enemies" component={Enemies} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/speedupCounter" component={SpeedupCounter} />
-            {/* <PrivateRoute path="/updatePlayer" component={UpdatePlayer} /> */}
+            <PrivateRoute path="/updatePlayer" component={UpdatePlayer} />
             <PrivateRoute path="/addPlayer" component={AddPlayer} />
         </div>
     );
